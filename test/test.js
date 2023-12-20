@@ -20,10 +20,11 @@ $(document).ready(function () {
             $(strBtn).prop("disabled", false);
             return;
           }
+
           setTimeout(function () {
             console.log(i);
 
-            //清除class
+            //清除不要的class
             $(element).removeClass(newClass);
 
             $(element[i]).addClass(newClass);
@@ -33,12 +34,12 @@ $(document).ready(function () {
         });
       });
     }
-
+    //判斷圈數
     if (loopTime <= LT) {
       promiseChain = promiseChain.then(() => addClass(round, end));
     }
   }
-
+  //取得隨機時間
   function random(i) {
     return 500 * i;
   }
@@ -51,22 +52,3 @@ $(document).ready(function () {
     console.log(round, end);
   });
 });
-
-// element.each(function (index, ele) {
-//   promiseChain = promiseChain.then(() => {
-//     return new Promise((resolve) => {
-//       setTimeout(function () {
-//         //清除前一個的class
-//         $(element).removeClass(newClass);
-
-//         $(ele).addClass(newClass);
-
-//         resolve();
-//       }, random($(ele).text()));
-//     });
-//   });
-
-//   if (index === element.length - 1) {
-//     promiseChain = promiseChain.then(() => addClass());
-//   }
-// });
