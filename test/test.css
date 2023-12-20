@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  height: 50px;
+  width: 50px;
+  background-color: bisque;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newCube {
+  height: 50px;
+  width: 50px;
+  background-color: cadetblue;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
