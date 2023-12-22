@@ -4,6 +4,7 @@ $(document).ready(function () {
   let newClass = "newCube";
   let end; //設定要走幾步
 
+  //就方法 用遞迴但是麻煩
   // function spinWheel(LT, targetIndex) {
   //   let promiseChain = Promise.resolve();
   //   loopTime++;
@@ -48,6 +49,7 @@ $(document).ready(function () {
         index++;
         spinTime++;
 
+        //如果走到底就回到一開始
         if (index === element.length) {
           index = 0;
         }
@@ -59,7 +61,7 @@ $(document).ready(function () {
     setTimeout(function () {
       //清除不要的class
       $(element).removeClass(newClass);
-      //
+      //新增class
       $(element[i]).addClass(newClass);
       resolve();
     }, time);
@@ -69,6 +71,7 @@ $(document).ready(function () {
     //讓按鈕失效
     $(strBtn).prop("disabled", true);
 
+    //這邊可以更改設定 看要骰哪個範圍內的整數
     end = Math.floor(Math.random() * (15 - 8 + 1)) + 5;
     spinWheel(end).then(() => {
       setTimeout(() => {
