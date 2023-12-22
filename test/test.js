@@ -70,10 +70,11 @@ $(document).ready(function () {
     $(strBtn).prop("disabled", true);
 
     end = Math.floor(Math.random() * (15 - 8 + 1)) + 5;
-    spinWheel(9).then(() => {
+    spinWheel(end).then(() => {
       setTimeout(() => {
         alert("結束");
         $(strBtn).prop("disabled", false);
+        $(element).removeClass(newClass);
       }, 1000);
     });
 
